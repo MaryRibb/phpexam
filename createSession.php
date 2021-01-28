@@ -42,7 +42,7 @@
             </div>
             <div class="form-group col-4">
                 <label for="second_rbutton">Второй ответ</label>
-                <input type="text" class="form-control" id="second_rb" name="five_question">
+                <input type="text" class="form-control" id="second_rb" name="second_rb">
                 <input type="number" class="form-control" id="second_csore_rb" min="-100" max="100" maxlength="3"  placeholder='Балл' name="second_csore_rb">
             </div>
             
@@ -60,12 +60,12 @@
             </div>
             <div class="form-group col-4">
                 <label for="second_check">Второй ответ</label>
-                <input type="text" class="form-control" id="second_check">
+                <input type="text" class="form-control" id="second_check"  name="second_check">
                 <input type="number" class="form-control" id="second_score_ck" min="-100" max="100" maxlength="3" placeholder='Балл' name="second_score_ck">
             </div>
             <div class="form-group col-4">
                 <label for="third_check">Третий ответ</label>
-                <input type="text" class="form-control" id="third_check">
+                <input type="text" class="form-control" id="third_check"  name="third_check">
                 <input type="number" class="form-control" id="third_score_ck"  min="-100" max="100" maxlength="3" placeholder='Балл' name="third_score_ck">
             </div>
         </div>
