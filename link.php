@@ -49,9 +49,7 @@ $session_id = $_GET['session_id'];
                 ';
             }
         } 
-        ?>
-
-        <?php
+       
         $get_data = mysqli_query($conn, "SELECT question FROM `second_type` WHERE session_id = '$session_id'");
         if (mysqli_num_rows($get_data) > 0) {
             while ($second_type = mysqli_fetch_assoc($get_data)) {
@@ -66,9 +64,7 @@ $session_id = $_GET['session_id'];
                 ';
             }
         } 
-        ?>
-
-        <?php
+      
         $get_data = mysqli_query($conn, "SELECT question FROM `third_type` WHERE session_id = '$session_id'");
         if (mysqli_num_rows($get_data) > 0) {
             while ($third_type = mysqli_fetch_assoc($get_data)) {
@@ -83,9 +79,7 @@ $session_id = $_GET['session_id'];
                 ';
             }
         } 
-        ?>
-
-        <?php
+       
         $get_data = mysqli_query($conn, "SELECT question FROM `fourth_type` WHERE session_id = '$session_id'");
         if (mysqli_num_rows($get_data) > 0) {
             while ($fourth_type = mysqli_fetch_assoc($get_data)) {
@@ -100,8 +94,7 @@ $session_id = $_GET['session_id'];
                 ';
             }
         } 
-        ?>
-        <?php
+      
         $get_data = mysqli_query($conn, "SELECT * FROM `five_type` WHERE session_id = '$session_id'");
         if (mysqli_num_rows($get_data) > 0) {
             while ($five_type = mysqli_fetch_assoc($get_data)) {
@@ -128,8 +121,7 @@ $session_id = $_GET['session_id'];
                 ';
             }
         } 
-        ?>
-        <?php
+       
         $get_data = mysqli_query($conn, "SELECT * FROM `six_type` WHERE session_id = '$session_id'");
         if (mysqli_num_rows($get_data) > 0) {
             while ($six_type = mysqli_fetch_assoc($get_data)) {
