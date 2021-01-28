@@ -11,7 +11,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <title>Sessions</title>
+    <title>Сессия</title>
+    <style>
+    a.disabled {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #999; /* цвет текста для нективной ссылки */
+}</style>
 </head>
 <body class="min-vh-100 d-flex mt-4 ml-4 mr-4 flex-column">
 <nav class="navbar navbar-light bg-light">
@@ -41,11 +47,16 @@
     <?php
 $connect = mysqli_connect('std-mysql', 'std_943_21', 'MR20022001','std_943_21');
 // function for getting data from database
+
+
 function get_sessions_data($connect)
 {
     $get_data = mysqli_query($connect, "SELECT * FROM `sessions`");
-    if (mysqli_num_rows($get_data) > 0) {
+    if (mysqli_num_rows($get_data) > 0 ) {
         while ($row = mysqli_fetch_assoc($get_data)) {
+            if($row['status'] =='Открыта'){
+
+            
 
             echo '
                <tbody>
@@ -55,14 +66,37 @@ function get_sessions_data($connect)
                     <td>' . $row['status'] . '</td>
                     <td>
                         
-                        <a href="archiveSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-warning">Закрыть</a>
+                        <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-warning">Закрыть</a>
                         <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-danger">Удалить</a>
                     </td>
                 </tr>
                 </tbody>
                 ';
+            }
+            else{
+                echo '
+                <tbody>
+                 <tr>
+                     <th scope="row">' . $row['id'] . '</th>
+                     <td><a  class="disabled" href="' . $row['link'] . '">' . $row['link'] . '</a></td>
+                     <td>' . $row['status'] . '</td>
+                     <td>
+                         
+                         <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-warning">Закрыть</a>
+                         <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-danger">Удалить</a>
+                     </td>
+                 </tr>
+                 </tbody>
+                 ';
+
+            }
         }
-    } 
+     
+    
+       
+
+    
+}
 }
 get_sessions_data($connect);
 
@@ -74,14 +108,6 @@ get_sessions_data($connect);
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>

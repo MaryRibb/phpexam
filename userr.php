@@ -111,11 +111,13 @@ $session_id = $_GET['session_id'];
                     <label for="first_type">' . $five_type['question'] . '</label>
 <br>
                     <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> ' . $five_type['first_rb'] .'
+                    <input type="hidden" name="first_score_rbb" value="' . $five_type['first_score_rb'] . '">
+    <input type="radio" name="options" id="option2" autocomplete="off" name="five_otvet"> ' . $five_type['first_rb'] .'
   </label>
   <br>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off">'. $five_type['second_rb'] .'
+  <input type="hidden" name="first_score_rbb" value="' . $five_type['second_csore_rb'] . '">
+    <input type="radio" name="options" id="option3" autocomplete="off" name="five_otvet">'. $five_type['second_rb'] .'
   </label>
   <br>
 
@@ -136,19 +138,22 @@ $session_id = $_GET['session_id'];
                 <div class="form-group">
                     <label for="first_type">' . $six_type['question'] . '</label>
                     <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  name="first_check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"  name="six_otvet">
+                    <input type="hidden" name="first_score_ckk" value="' . $six_type['first_score_ck'] . '">
                     <label class="form-check-label" for="flexCheckDefault">
                    ' . $six_type['first_check'] .'
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked  name="second_check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked  name="six_otvet">
+                    <input type="hidden" name="second_score_ckk" value="' . $six_type['second_score_ck'] . '">
                     <label class="form-check-label" for="flexCheckChecked">
                       
                     '. $six_type['second_check'] .'
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked  name="third_check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked  name="six_otvet">
+                    <input type="hidden" name="third_score_ckk" value="' . $six_type['third_score_ck'] . '">
                     <label class="form-check-label" for="flexCheckChecked">
                       
                     '. $six_type['third_check'] .'
