@@ -43,7 +43,7 @@
     <tr>
         <th scope="col">Id сессии</th>
         <th scope="col">Ссылка</th>
-        <th scope="col">Закрыто/Открыто</th>
+        
         <th scope="col">Закрыть</th>
         <th scope="col">Удалить</th>
     </tr>
@@ -67,7 +67,7 @@ function get_sessions_data($connect)
                 <tr>
                     <th scope="row">' . $row['id'] . '</th>
                     <td><a href="' . $row['link'] . '">' . $row['link'] . '</a></td>
-                    <td>' . $row['status'] . '</td>
+                   
                     <td>
                         
                         <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Закрыть</a>
@@ -88,7 +88,7 @@ function get_sessions_data($connect)
                  <tr>
                      <th scope="row">' . $row['id'] . '</th>
                      <td><a  class="disabled" href="' . $row['link'] . '">' . $row['link'] . '</a></td>
-                     <td>' . $row['status'] . '</td>
+                     
                      <td>
                          
                          <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Закрыть</a>
