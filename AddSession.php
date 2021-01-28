@@ -9,7 +9,7 @@ if(isset($_POST['first_question'])) {
      $id_r=rand(5, 15);
      $id_rе=rand(5, 15);
      $session_id = $id_r * $id_rе;
-     $link = 'userr.php?session_id=' . $session_id;
+     $link = 'link.php?session_id=' . $session_id;
      $insert_query = mysqli_query($connect, "INSERT INTO `sessions` (link, status) VALUES ('$link','Открыта')");
     
    

@@ -1,3 +1,4 @@
+
 <?php
 $connect = mysqli_connect('std-mysql', 'std_943_21', 'MR20022001','std_943_21');
 $session_id = $_GET['session_id'];
@@ -6,7 +7,7 @@ $session_id = $_GET['session_id'];
 if(isset($_POST['first_otvet'])) {
     
 
-     
+    $session_id = $_GET['session_id'];
     $first_otvet = mysqli_real_escape_string($connect, htmlspecialchars($_POST['first_otvet']));
     $second_otvet = mysqli_real_escape_string($connect, htmlspecialchars($_POST['second_otvet']));
     $third_otvet = mysqli_real_escape_string($connect, htmlspecialchars($_POST['third_otvet']));
@@ -25,5 +26,7 @@ if(isset($_POST['first_otvet'])) {
     header("Location: manager.php");
 }
 ?>
+
+
 
 

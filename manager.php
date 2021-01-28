@@ -3,11 +3,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
+ 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -27,6 +27,9 @@
     <button type="button" class="btn btn-secondary"><a href="createSession.php">Создать сессию</a></button>
     </span>
     <span class="navbar-text">
+    <button type="button" class="btn btn-secondary"><a href="resultSession.php">Посмотреть результаты</a></button>
+    </span>
+    <span class="navbar-text">
     <button type="button" class="btn btn-danger"> <a href="exit.php">Выход</a></button>
    
     </span>
@@ -35,13 +38,14 @@
 
 
 
-<table class="table">
-    <thead>
+<table class="table table-inverse">
+<thead class="thead-default">
     <tr>
         <th scope="col">Id сессии</th>
         <th scope="col">Ссылка</th>
         <th scope="col">Закрыто/Открыто</th>
-        <th scope="col"></th>
+        <th scope="col">Закрыть</th>
+        <th scope="col">Удалить</th>
     </tr>
     </thead>
     <?php
@@ -66,8 +70,13 @@ function get_sessions_data($connect)
                     <td>' . $row['status'] . '</td>
                     <td>
                         
-                        <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-warning">Закрыть</a>
-                        <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-danger">Удалить</a>
+                        <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Закрыть</a>
+                      
+                    </td>
+                    <td>
+                        
+                       
+                        <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Удалить</a>
                     </td>
                 </tr>
                 </tbody>
@@ -82,8 +91,13 @@ function get_sessions_data($connect)
                      <td>' . $row['status'] . '</td>
                      <td>
                          
-                         <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-warning">Закрыть</a>
-                         <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-danger">Удалить</a>
+                         <a href="closeSession.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Закрыть</a>
+                         
+                     </td>
+                     <td>
+                         
+                       
+                         <a href="deleteS.php?session_id=' . $row['id'] . '" type="button" class="btn btn-link">Удалить</a>
                      </td>
                  </tr>
                  </tbody>
@@ -105,9 +119,6 @@ get_sessions_data($connect);
 </table>
 
 
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
 </body>
 </html>
